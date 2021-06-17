@@ -1,0 +1,5 @@
+name: Goose
+version: ${project.version}
+main: com.github.ogcontent.Main
+api-version: 1.16
+authors: [ 2020, OGContent ]
