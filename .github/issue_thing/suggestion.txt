@@ -1,0 +1,8 @@
+---
+name: Suggestion
+about: Suggest a suggestion
+
+---
+
+### What's the suggestion?
+<!--- Details about the suggestion --->
