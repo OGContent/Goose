@@ -3,3 +3,8 @@ version: ${project.version}
 main: com.github.ogcontent.Main
 api-version: 1.16
 authors: [ 2020, OGContent ]
+
+
+commands:
+  goose:
+    description: "Main command for the plugin Goose"
