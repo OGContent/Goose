@@ -2,7 +2,7 @@
 name: Feature request
 about: Suggest an idea
 title: "[Suggestion]"
-labels: ''
+labels: enhancement
 assignees: OGContent
 
 ---
