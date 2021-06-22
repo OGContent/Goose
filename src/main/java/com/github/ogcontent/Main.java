@@ -1,23 +1,37 @@
 package com.github.ogcontent;
 
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityBreedEvent;
 
-import org.bukkit.plugin.java.JavaPlugin;
+
+import org.bukkit.event.player.PlayerMoveEvent;
+import ru.beykerykt.lightapi.LightAPI;
 
 import java.util.Objects;
 
-public final class Main extends JavaPlugin {
-    private static Main instance;
-    public static Main getInstance() {
-        return instance;
-    }
-    @Override
-    public void onEnable() {
-        instance = this;
-        getServer().getPluginManager().registerEvents(new Event(), this);
-        Objects.requireNonNull(getCommand("goose")).setExecutor(new VersionCommand());
-    }
-    @Override
-    public void onDisable() {
-        instance = null;
+// why is this here
+
+
+public class Event implements Listener {
+    @EventHandler
+    public void Breed4(EntityBreedEvent e) {
+        if (e.getFather().getType().equals(EntityType.CHICKEN)) {
+            Entity child = e.getEntity();
+            child.setInvulnerable(true);
+            Location exactLoc = child.getLocation();
+            Objects.requireNonNull(exactLoc.getWorld()).createExplosion(exactLoc, 10, true);
+            child.setCustomName("Goose");
+            if (!exactLoc.add(0, 5, 0).getBlock().getType().isSolid()) {
+                child.teleport(exactLoc.add(0, 5, 0));
+            }
+            child.setInvulnerable(false);
+        }
     }
 }
