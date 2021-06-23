@@ -9,10 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityBreedEvent;
-
-
 import org.bukkit.event.player.PlayerMoveEvent;
-import ru.beykerykt.lightapi.LightAPI;
 
 import java.util.Objects;
 
